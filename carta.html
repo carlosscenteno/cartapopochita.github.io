@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta Animada</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .carta {
+      width: 300px;
+      height: 400px;
+      perspective: 1000px; /* Define la distancia de perspectiva para el efecto 3D */
+    }
+
+    .carta-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.5s;
+    }
+
+    .carta:hover .carta-inner {
+      transform: rotateY(180deg); /* Rota la carta cuando el ratón pasa sobre ella */
+    }
+
+    .carta-front, .carta-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden; /* Esconde la parte posterior cuando se voltea */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 24px;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .carta-front {
+      background-color: #4CAF50; /* Color de la parte frontal */
+    }
+
+    .carta-back {
+      background-color: #FF5733; /* Color de la parte posterior */
+      transform: rotateY(180deg); /* Rota la parte posterior para que esté oculta inicialmente */
+    }
+
+    .texto-front, .texto-back {
+      padding: 20px;
+    }
+  </style>
+</head>
+<body background="luna.jpg">
+  <div class="carta">
+    <div class="carta-inner">
+      <div class="carta-front">
+        <div class="texto-front">
+          ¡Hola! Popochita, Recuerda que siempre te llevare en mi corazon.
+          Eres lo mas hermoso que me ha pasado en la vida.
+        </div>
+      </div>
+      <div class="carta-back">
+        <div class="texto-back">
+          Siempre seras esa luna que ilumina mi tenebrosa oscuridad.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Aquí podrías agregar interactividad adicional si lo deseas
+  </script>
+</body>
+</html>
